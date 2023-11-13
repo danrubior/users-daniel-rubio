@@ -1,0 +1,47 @@
+:host {
+  mat-card-title {
+    width: 100%;
+
+    .actions {
+      float: right;
+    }
+  }
+
+  .users-list {
+    overflow: auto;
+  }
+
+  .filters {
+    margin-bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+
+    mat-form-field {
+      width: 50%;
+    }
+
+    .search-button {
+      width: auto;
+      margin-top: -23px;
+    }
+  }
+
+  .no-data-message {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    place-content: start;
+    gap: 8px;
+    background: #f2f2f2;
+    border: 1px solid #000;
+    border-radius: 12px;
+    padding: 16px;
+
+    mat-icon {
+      color: #ffa500;
+    }
+  }
+}

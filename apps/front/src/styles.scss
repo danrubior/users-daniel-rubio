@@ -1,0 +1,43 @@
+.layout {
+  padding: 100px 32px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+mat-toolbar {
+  &.main-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+}
+
+mat-card {
+  margin: 32px;
+  padding: 16px;
+  border-radius: 12px;
+
+  .mat-mdc-card-header {
+    padding: 0;
+
+    mat-card-title {
+      h2 {
+        margin: 0 0 24px;
+      }
+    }
+
+    .mat-mdc-card-header-text {
+      width: 100%;
+    }
+  }
+}
+
+.mat-mdc-no-data-row {
+  display: flex;
+  padding: 16px;
+}
+
+@import './theme.scss';

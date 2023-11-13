@@ -1,0 +1,57 @@
+<div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title
+        ><h2>
+          <span>Usuarios</span>
+          <div class="actions">
+            <button mat-mini-fab color="primary" (click)="getData()">
+              <mat-icon fontIcon="refresh"></mat-icon>
+            </button>
+          </div>
+        </h2>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <ng-container *ngIf="!loading; else loadingTemplate">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="filters">
+            <mat-form-field class="search">
+              <mat-label>Filtrar</mat-label>
+              <input
+                matInput
+                formControlName="search"
+                placeholder="Buscar..."
+              />
+            </mat-form-field>
+            <button
+              class="search-button"
+              mat-flat-button
+              color="primary"
+              type="submit"
+            >
+              <mat-icon fontIcon="search"></mat-icon>
+              <span>Buscar</span>
+            </button>
+          </div>
+        </form>
+
+        <div class="users-list">
+          <ng-container *ngIf="usersData; else noData">
+            <app-users-list [usersData]="usersData" />
+          </ng-container>
+          <ng-template #noData>
+            <div class="no-data-message">
+              <mat-icon fontIcon="info"></mat-icon>
+              <span>No hay datos, comprueba que tengas conexión a la API</span>
+            </div>
+          </ng-template>
+        </div>
+      </ng-container>
+      <ng-template #loadingTemplate>
+        <mat-spinner [diameter]="48"></mat-spinner>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>
